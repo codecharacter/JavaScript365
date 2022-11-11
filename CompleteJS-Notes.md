@@ -114,40 +114,107 @@
 ## S3: JavaScript Fundamentals - Part 2
 
 ### Activating Strict Mode
-
+`'use strict';`
+- write more secure code, avoid introducing bugs
+- prevents us from doing certain things
+- presents visible error output in editor
 
 ### Functions
+- function: a piece of code we can reuse in our code
+    function fruitProcessor (apples, oranges) {
+        const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+        return juice;
+    }
 
+    const appleJuice = fruitProcessor(5, 0);
+    console.log(appleJuice);
+
+    const appleOrangeJuice = fruitProcessor(2, 4);
+    console.log(appleOrangeJuice);
+- DRY: Don't Repeat Yourself
+- console.log is a built-in function
 
 ### Function Declarations vs Expressions
-
+- function declaration
+    function calcAge1(birthYear) {
+        return 2037 - birthYear;
+    }
+- function expression
+    const calcAge2 = function (birthYear) {
+        return 2037 - birthYear;
+    }
+- a function really is just a "value"
+- difference: we can call fn declarations BEFORE they're defined
 
 ### Arrow Functions
-
+- special form of function expression
+- value returned implicitly
+    const calcAge3 = birthYear => 2037 - birthYear;
+- arrow functions do not get a "this" keyword (future lecture)
 
 ### Functions Calling Other Functions
+    function cutFruitPieces(fruit) {
+        return fruit * 4;
+    }
 
+    function fruitProcessor (apples, oranges) {
+        
+        const applePieces = cutFruitPieces(apples);
+        const orangePieces = cutFruitPieces(oranges);
+
+        const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+        return juice;
+    }
+    console.log(fruitProcessor(2, 3));
 
 ### Reviewing Functions
-
+- return keyword will immediately exit a function
+    - "the function has returned"
+- Function declaration: fn that can be used before it's declared
+- Function expression: essentially a function value stored in a variable
+- Arrow function: great for quick one-line functions. Has no "this" keyword.
+- Work similarly: input data, transform data, output data
 
 ### Coding Challenge #1
 
 
 ### Intro to Arrays
-
+- Data Structure
+    const friends = ['Michael', 'Steven', 'Peter'];
+    const years = new Array(1991, 1984, 2008, 2020);
+- change array values, even if "const"
+    - primitive values cannot be changed, but arrays are not primitve
 
 ### Basic Array Operations (Methods)
-
+- methods = array operations
+    - add/remove/check elements
+    const friends = ['Michael', 'Steven', 'Peter'];
+    friends.push('Jay');
+    friends.unshift('John');
+    friends.pop(); // Last
+    friends.shift(); // First
 
 ### Coding Challenge #2
 
 
 ### Intro to Objects
-
+- Object data structure
+- define key:value pairs
+- order of elements does not matter for retrieval
+- useful for more unstructured data
 
 ### Dot vs Bracket Notation
-
+    const myCountry = {
+        country: 'USA',
+        capital: 'Washington DC',
+        language: 'English',
+        population: 330,
+        neighbors: ['Canada', 'Mexico']
+    };
+- bracket: use when requiring computation
+    myCountry.population = myCountry.population + 2;
+- dot: most cases where you know/need key value
+    myCountry['population'] = myCountry['population'] - 2;
 
 ### Object Methods
 
