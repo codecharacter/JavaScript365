@@ -217,22 +217,55 @@
     myCountry['population'] = myCountry['population'] - 2;
 
 ### Object Methods
+- any function attached to an object is called a method
+- this keyword
 
 
 ### Coding Challenge #3
 
 
 ### Iteration: The for Loop
+    for(let rep = 1; rep <= 10; rep++) {
+        console.log(`Lifting weights repetition ${rep}`);
+    }
+- control structure to automate repetitive tasks
 
 
 ### Looping Arrays, Breaking and Continuing
+    console.log("--- ONLY STRINGS ---");
+    for(let i = 0; i < jonas.length; i++) {
+        if(typeof jonas[i] !== 'string') continue;
 
+        console.log(jonas[i], typeof jonas[i]);
+    }
+
+    console.log("--- BREAK WITH NUMBER ---");
+    for(let i = 0; i < jonas.length; i++) {
+        if(typeof jonas[i] === 'number') break;
+
+        console.log(jonas[i], typeof jonas[i]);
+    }
 
 ### Looping Backwards and Loops in Loops
+    for(let i = jonas.length - 1; i >= 0; i--) {
+        console.log(i, jonas[i]);
+    }
 
+    for(let exercise = 1; exercise < 4; exercise++) {
+        console.log(`--- Starting Exercise ${exercise}`);
+
+        for(let rep = 1; rep < 6; rep++) {
+            console.log(`Lifting weights rep ${rep}`);
+        }
+    }
 
 ### The while Loop
+    let dice = Math.trunc(Math.random() * 6) + 1;
 
+    while (dice !== 6) {
+        console.log(`You rolled a ${dice}`);
+        dice = Math.trunc(Math.random() * 6) + 1;
+    }
 
 ### Coding Challenge #4
 
